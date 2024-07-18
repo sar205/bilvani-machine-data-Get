@@ -27,7 +27,7 @@ const getsaveColor = async (req, res) => {
             return res.status(404).json({ message: 'No saved colors found' });
         }
 
-        const savedColors = await Color.find({ fetched: false }).limit(5);
+        const savedColors = await Color.find({ fetched: false }).limit(1);
 
         if (savedColors.length === 0) {
             return res.status(200).json({ message: 'All data fetched, wait for new data entry' });
